@@ -49,6 +49,8 @@ class OwnerControllerTest {
 
         //then
         assertThat("%Buck%").isEqualToIgnoringCase(captor.getValue());
+        assertThat(ownerList.isEmpty());
+        assertThat("owners/findOwners".equals(viewName));
     }
 
     @Test
@@ -64,7 +66,6 @@ class OwnerControllerTest {
         //then
         assertThat("%Buck%").isEqualToIgnoringCase(stringArgumentCaptor.getValue());
     }
-
 
     @Test
     void processCreationFormHasErrors() {
